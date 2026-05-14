@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,8 +26,8 @@ class DatabaseSeeder extends Seeder
             ->has(Post::factory(45))
             ->has(Comments::factory(120)->recycle($posts))
             ->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+            ]);
     }
 }
